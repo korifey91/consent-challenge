@@ -27,13 +27,9 @@ function GiveConsent() {
   const handleChange = () => {};
   return (
     <form className={styles.consentForm} noValidate autoComplete="off">
-      <div>
-        <TextField className={styles.input} label="Name" variant="outlined" />
-        <TextField
-          className={styles.input}
-          label="Email address"
-          variant="outlined"
-        />
+      <div className={styles.inputs}>
+        <TextField label="Name" variant="outlined" />
+        <TextField label="Email address" variant="outlined" />
       </div>
       <p>I agree to:</p>
       <FormGroup className={styles.consents}>

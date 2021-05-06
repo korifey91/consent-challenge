@@ -7,6 +7,7 @@ import {
 
 import { Layout, Navigation, PageLayout } from './components';
 import GiveConsent from './Pages/GiveConsent/GiveConsent';
+import CollectedConsents from './Pages/CollectedConsents/CollectedConsents';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
               <GiveConsent />
             </Route>
             <Route path="/consents">
-              <div>2</div>
+              <CollectedConsents />
             </Route>
             <Route path="*">
               <Redirect to="/give-consent" />
