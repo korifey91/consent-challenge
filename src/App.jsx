@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import { Layout, Navigation, PageLayout } from './components';
+import GiveConsent from './Pages/GiveConsent/GiveConsent';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <PageLayout>
           <Switch>
             <Route path="/give-consent">
-              <div>1</div>
+              <GiveConsent />
             </Route>
             <Route path="/consents">
               <div>2</div>

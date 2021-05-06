@@ -18,9 +18,13 @@ const navigationMenuList = [
 function Navigation() {
   const location = useLocation();
   return (
-    <MenuList>
+    <MenuList className={styles.wrapper}>
       {navigationMenuList.map(({ to, title }) => (
-        <MenuItem key={to} selected={location.pathname === to}>
+        <MenuItem
+          key={to}
+          className={styles.menuItem}
+          selected={location.pathname === to}
+        >
           <NavLink className={styles.link} to={to}>
             {title}
           </NavLink>
