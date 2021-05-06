@@ -1,0 +1,9 @@
+.link {
+  width: 100%;
+  text-decoration: none;
+
+  &:active,
+  &:visited {
+    color: #282c34;
+  }
+}

@@ -1,22 +1,35 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+
+import Layout from './components/Layout/Layout';
+import Navigation from './components/Navigation/Navigation';
+
 import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Layout>
+        <Navigation />
+        <section>
+          <Switch>
+            <Route path="/give-consent">
+              <div>1</div>
+            </Route>
+            <Route path="/consents">
+              <div>2</div>
+            </Route>
+            <Route path="*">
+              <Redirect to="/give-consent" />
+            </Route>
+          </Switch>
+        </section>
+      </Layout>
+    </Router>
   );
 }
 
