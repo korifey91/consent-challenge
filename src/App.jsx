@@ -5,17 +5,14 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import Layout from './components/Layout/Layout';
-import Navigation from './components/Navigation/Navigation';
-
-import './App.scss';
+import { Layout, Navigation, PageLayout } from './components';
 
 function App() {
   return (
     <Router>
       <Layout>
         <Navigation />
-        <section>
+        <PageLayout>
           <Switch>
             <Route path="/give-consent">
               <div>1</div>
@@ -27,7 +24,7 @@ function App() {
               <Redirect to="/give-consent" />
             </Route>
           </Switch>
-        </section>
+        </PageLayout>
       </Layout>
     </Router>
   );
