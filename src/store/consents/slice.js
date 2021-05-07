@@ -13,14 +13,14 @@ export const consentsSlice = createSlice({
     error: null,
   },
   reducers: {
-    getConsentsSuccess: (state, payload) => {
+    getConsentsSuccess: (state, { payload }) => {
       state.data = payload.data;
       state.meta = payload.meta;
     },
-    postConsentsSuccess: (state, consent) => {
+    postConsentsSuccess: (state, { payload: consent }) => {
       state.data.push(consent);
     },
-    setConsentsError: (state, error) => {
+    setConsentsError: (state, { payload: error }) => {
       state.error = error;
     },
   },

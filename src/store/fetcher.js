@@ -15,5 +15,5 @@ export default function mockedAxios({ url, method = 'get', data } = {}) {
     dummyData.push(data);
   }
 
-  return dummyData;
+  return { data: { consents: dummyData } };
 }
