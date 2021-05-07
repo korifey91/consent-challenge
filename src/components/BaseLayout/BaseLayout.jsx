@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 
-import styles from './Layout.module.scss';
+import styles from './BaseLayout.module.scss';
 
-function Layout({ children }) {
+function BaseLayout({ children }) {
   return <div className={styles.layout}>{children}</div>;
 }
 
-Layout.propTypes = {
+BaseLayout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
 };
 
-export default Layout;
+export default BaseLayout;

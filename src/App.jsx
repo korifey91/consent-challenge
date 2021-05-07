@@ -5,14 +5,13 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import { Layout, Navigation, PageLayout } from './components';
-import GiveConsent from './Pages/GiveConsent/GiveConsent';
-import CollectedConsents from './Pages/CollectedConsents/CollectedConsents';
+import { BaseLayout, Navigation, PageLayout } from './components';
+import { GiveConsent, CollectedConsents } from './Pages';
 
 function App() {
   return (
     <Router>
-      <Layout>
+      <BaseLayout>
         <Navigation />
         <PageLayout>
           <Switch>
@@ -27,7 +26,7 @@ function App() {
             </Route>
           </Switch>
         </PageLayout>
-      </Layout>
+      </BaseLayout>
     </Router>
   );
 }
