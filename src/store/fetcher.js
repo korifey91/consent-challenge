@@ -1,13 +1,19 @@
+import dummyData from './dummy';
+
 /**
- * Mock implementation of the Axios package
+ * * Mock implementation of the Axios package
  * https://github.com/axios/axios
  * @param url
- * @param options
+ * @param method
  */
-export default function mockedAxios({ url, method } = {}) {
+export default function mockedAxios({ url, method = 'get', data } = {}) {
   if (url === undefined || typeof url !== 'string') {
     throw new Error('url should be provided');
   }
-  // @TODO finish implementation
-  console.log('method ===>', method);
+
+  if (data && method === 'post') {
+    dummyData.push(data);
+  }
+
+  return dummyData;
 }

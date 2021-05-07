@@ -16,6 +16,7 @@ function* getConsentsWorker() {
       url: `/consents`,
     };
     const consents = yield call(fetcher, config);
+
     if (consents.data) {
       yield put(
         getConsentsSuccess({
@@ -40,6 +41,7 @@ function* postConsentsWorker() {
       url: `/consents`,
     };
     const consent = yield call(fetcher, config);
+
     if (consent.data) {
       yield put(postConsentsSuccess(consent.data));
     } else throw new Error(); // throw manually to avoid duplicating
