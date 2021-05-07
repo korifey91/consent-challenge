@@ -12,8 +12,10 @@ export default function mockedAxios({ url, method = 'get', data } = {}) {
   }
 
   if (data && method === 'post') {
-    dummyData.push(data);
+    const consent = { id: dummyData.length + 1, ...data };
+    dummyData.push(consent);
+    return { data: consent };
   }
 
-  return { data: { consents: dummyData } };
+  return { data: { consents: Array.from(dummyData) } };
 }

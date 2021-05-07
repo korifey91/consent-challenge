@@ -34,11 +34,12 @@ function* getConsentsWorker() {
   }
 }
 
-function* postConsentsWorker() {
+function* postConsentsWorker({ payload }) {
   try {
     const config = {
       method: 'post',
       url: `/consents`,
+      data: payload,
     };
     const consent = yield call(fetcher, config);
 
