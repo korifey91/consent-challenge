@@ -14,6 +14,7 @@ export default function mockedAxios({ url, method = 'get', data } = {}) {
   if (data && method === 'post') {
     const consent = { id: dummyData.length + 1, ...data };
     dummyData.push(consent);
+
     return { data: consent };
   }
 
